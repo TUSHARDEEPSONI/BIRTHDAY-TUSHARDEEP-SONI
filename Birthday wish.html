@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Tushar Deep Soni</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700;900&family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            background: radial-gradient(circle at center, #282018, #080808 75%);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                radial-gradient(2px 2px at 20% 30%, #fff, transparent),
+                radial-gradient(2px 2px at 70% 60%, #ffd700, transparent),
+                radial-gradient(2px 2px at 40% 80%, #fff, transparent),
+                radial-gradient(2px 2px at 90% 15%, #ffd700, transparent);
+            background-size: 200px 200px;
+            opacity: .45;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 35px 20px;
+        }
+
+        .crown {
+            font-size: 55px;
+            animation: float 2s infinite ease-in-out;
+            filter: drop-shadow(0 0 15px gold);
+        }
+
+        .small-title {
+            color: #e8c46a;
+            letter-spacing: 6px;
+            font-size: 13px;
+            margin: 15px 0;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 8vw, 85px);
+            font-weight: 900;
+            line-height: 1.15;
+            background: linear-gradient(120deg, #fff1a6, #d4a63d, #fff4c1, #b8860b);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 35px #d4a63d44;
+        }
+
+        .name {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(45px, 9vw, 90px);
+            color: #ffe5a0;
+            margin: 12px 0 20px;
+            text-shadow: 0 0 20px #e5b84d;
+            animation: glow 3s infinite alternate;
+        }
+
+        .line {
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, gold, transparent);
+            margin: 15px auto 25px;
+        }
+
+        .message {
+            max-width: 650px;
+            font-size: 16px;
+            color: #e7dfcd;
+            line-height: 2;
+            font-weight: 300;
+        }
+
+        .cake {
+            font-size: 85px;
+            margin: 25px 0;
+            animation: float 2.5s infinite ease-in-out;
+            filter: drop-shadow(0 0 20px #d4a63d66);
+        }
+
+        button {
+            padding: 16px 38px;
+            border: 1px solid #f5d477;
+            background: linear-gradient(135deg, #f6d77a, #b8860b);
+            color: #17100a;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: .3s;
+            box-shadow: 0 0 25px #d4a63d44;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 35px gold;
+        }
+
+        .footer {
+            margin-top: 35px;
+            color: #b9a77b;
+            font-size: 12px;
+            letter-spacing: 3px;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px gold;
+            }
+
+            to {
+                text-shadow: 0 0 35px #ffdf70, 0 0 60px gold;
+            }
+        }
+
+        canvas {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        #surprise {
+            display: none;
+            color: #ffe9a8;
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(35px, 6vw, 55px);
+            margin-top: 25px;
+            animation: glow 2s infinite alternate;
+        }
+
+        @media(max-width: 500px) {
+            .message {
+                font-size: 14px;
+            }
+
+            .small-title {
+                letter-spacing: 3px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="stars"></div>
+    <canvas id="confetti"></canvas>
+
+    <div class="container">
+
+        <div class="crown">👑</div>
+
+        <div class="small-title">A SPECIAL DAY • A SPECIAL PERSON</div>
+
+        <h1>HAPPY<br>BIRTHDAY</h1>
+
+        <div class="name">Tushar Deep Soni</div>
+
+        <div class="line"></div>
+
+        <div class="cake">🎂</div>
+
+        <p class="message">
+            Today is not just another day.
+            It's a celebration of YOU! ✨
+            <br>
+            May your dreams become reality,
+            your journey be filled with success,
+            and every new chapter bring happiness,
+            strength, wealth and unforgettable memories.
+            <br><br>
+            Keep dreaming BIG. Keep shining.
+            Your best chapter is yet to come!
+        </p>
+
+        <button onclick="celebrate()">
+            🎉 LET'S CELEBRATE
+        </button>
+
+        <div id="surprise">
+            The World Is Yours! ✨
+        </div>
+
+        <div class="footer">
+            MADE WITH ❤️ FOR TUSHAR DEEP SONI
+        </div>
+
+    </div>
+
+    <script>
+        // const canvas = document.getElementById("confetti");
+        // const ctx = canvas.getContext("2d");
+
+        // let particles = [];
+        // let celebrating = false;
+
+        // function resizeCanvas() {
+        //     canvas.width = window.innerWidth;
+        //     canvas.height = window.innerHeight;
+        // }
+
+        // window.addEventListener("resize", resizeCanvas);
+        // resizeCanvas();
+
+        // function celebrate() {
+        //     document.getElementById("surprise").style.display = "block";
+
+        //     for (let i = 0; i < 250; i++) {
+        //         particles.push({
+        //             x: Math.random() * canvas.width,
+        //             y: -Math.random() * canvas.height,
+        //             size: Math.random() * 7 + 3,
+        //             speed: Math.random() * 5 + 2,
+        //             angle: Math.random() * 6,
+        //             color: ["#FFD700", "#FFFFFF", "#FF69B4",
+        //                     "#E6BE8A", "#FF4500"][Math.floor(Math.random()*5)]
+        //         });
+        //     }
+
+        //     if (!celebrating) {
+        //         celebrating = true;
+        //         animate();
+        //     }
+        // }
+
+        // function animate() {
+        //     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        //     particles.forEach((p) => {
+        //         ctx.fillStyle = p.color;
+        //         ctx.beginPath();
+        //         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        //         ctx.fill();
+
+        //         p.y += p.speed;
+        //         p.x += Math.sin(p.angle) * 2;
+        //         p.angle += 0.03;
+        //     });
+
+        //     particles = particles.filter(p => p.y < canvas.height + 20);
+
+        //     if (particles.length > 0) {
+        //         requestAnimationFrame(animate);
+        //     } else {
+        //         celebrating = false;
+        //     }
+        // }
+
+        // // Automatic small celebration on page load
+        // window.addEventListener("load", () => {
+        //     setTimeout(celebrate, 1000);
+        // });
+
+        const canvas = document.getElementById("confetti");
+        const ctx = canvas.getContext("2d");
+
+        let particles = [];
+        let celebrating = false;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener("resize", resizeCanvas);
+        resizeCanvas();
+
+        function createHeart() {
+            return {
+                x: Math.random() * canvas.width,
+                y: -30,
+                size: Math.random() * 18 + 14,
+                speed: Math.random() * 2 + 1,
+                drift: Math.random() * 2 - 1,
+                color: ["#ff1744", "#ff4d6d", "#ffd700", "#ff85a1"][
+                    Math.floor(Math.random() * 4)
+                ]
+            };
+        }
+
+        function drawHeart(x, y, size, color) {
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.scale(size / 30, size / 30);
+
+            ctx.fillStyle = color;
+            ctx.shadowColor = color;
+            ctx.shadowBlur = 12;
+
+            ctx.beginPath();
+            ctx.moveTo(0, 10);
+            ctx.bezierCurveTo(-25, -5, -15, -20, 0, -8);
+            ctx.bezierCurveTo(15, -20, 25, -5, 0, 10);
+            ctx.fill();
+
+            ctx.restore();
+        }
+
+        function celebrate() {
+            document.getElementById("surprise").style.display = "block";
+
+            for (let i = 0; i < 100; i++) {
+                particles.push(createHeart());
+            }
+
+            if (!celebrating) {
+                celebrating = true;
+                animate();
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach((p) => {
+                drawHeart(p.x, p.y, p.size, p.color);
+
+                p.y += p.speed;
+                p.x += p.drift;
+            });
+
+            particles = particles.filter(
+                p => p.y < canvas.height + 40
+            );
+
+            if (particles.length > 0) {
+                requestAnimationFrame(animate);
+            } else {
+                celebrating = false;
+            }
+        }
+
+        window.addEventListener("load", () => {
+            setTimeout(celebrate, 1000);
+        });
+
+    </script>
+
+</body>
+
+</html>
