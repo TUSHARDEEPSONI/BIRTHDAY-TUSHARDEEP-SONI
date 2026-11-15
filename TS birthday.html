@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Tushardeep Soni❤️</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            background: radial-gradient(circle at top, #32183e, #120b20 55%, #080610);
+            color: white;
+            font-family: Poppins, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body:before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image: radial-gradient(#fff 1px, transparent 1px);
+            background-size: 35px 35px;
+            opacity: .13;
+        }
+
+        .screen {
+            min-height: 100vh;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+            z-index: 2;
+            animation: fade .9s ease;
+        }
+
+        .screen.active {
+            display: flex
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(20px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        h1,
+        h2 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        h1 {
+            font-size: clamp(38px, 8vw, 75px);
+            line-height: 1.2;
+            margin: 20px 0;
+        }
+
+        h1 span {
+            background: linear-gradient(90deg, #fff, #f6a5c7, #e8c48b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        h2 {
+            font-size: clamp(34px, 6vw, 55px);
+            margin-bottom: 15px;
+        }
+
+        h2 em {
+            color: #f4a6c5
+        }
+
+        .kicker {
+            color: #eac58b;
+            letter-spacing: 4px;
+            font-size: 10px;
+            margin-bottom: 25px;
+        }
+
+        .subtitle {
+            color: #d7c5df;
+            line-height: 1.9;
+            font-size: 14px;
+            margin: 15px 0 30px;
+        }
+
+        .btn {
+            border: 1px solid #f6c5d8;
+            border-radius: 50px;
+            padding: 16px 30px;
+            background: linear-gradient(100deg, #d67fa7, #a36bb2);
+            color: white;
+            font-weight: 600;
+            letter-spacing: 2px;
+            cursor: pointer;
+            box-shadow: 0 0 25px #e98bbd66;
+            transition: .4s;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 0 40px #f4a6ce;
+        }
+
+        .btn:disabled {
+            opacity: .65;
+            cursor: default
+        }
+
+        /* Gift Box */
+
+        .gift-stage {
+            width: 280px;
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 900px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .gift {
+            position: relative;
+            width: 155px;
+            height: 135px;
+            transform-style: preserve-3d;
+            animation: bounce 3s infinite ease-in-out;
+            filter: drop-shadow(0 15px 20px #0008);
+        }
+
+        @keyframes bounce {
+            50% {
+                transform: translateY(-12px) rotateY(8deg)
+            }
+        }
+
+        .box-body {
+            position: absolute;
+            bottom: 0;
+            width: 155px;
+            height: 105px;
+            background: linear-gradient(120deg, #a94483, #ec8eb7);
+            border: 2px solid #f7c5d8;
+            border-radius: 4px;
+        }
+
+        .ribbon {
+            position: absolute;
+            width: 24px;
+            height: 100%;
+            background: linear-gradient(90deg, #c89a51, #ffe5a1, #c89a51);
+            left: 65px;
+        }
+
+        .box-lid {
+            position: absolute;
+            top: 20px;
+            left: -9px;
+            width: 173px;
+            height: 30px;
+            background: linear-gradient(90deg, #b75c94, #f5b0cb, #b75c94);
+            border: 2px solid #f7c5d8;
+            z-index: 3;
+            transform-origin: left center;
+            transition: 1s ease;
+        }
+
+        .bow {
+            position: absolute;
+            top: -24px;
+            left: 65px;
+            width: 35px;
+            height: 25px;
+        }
+
+        .bow:before,
+        .bow:after {
+            content: "";
+            position: absolute;
+            width: 22px;
+            height: 17px;
+            border: 5px solid #f2ce87;
+            border-radius: 50%;
+        }
+
+        .bow:before {
+            left: -10px;
+            transform: rotate(25deg)
+        }
+
+        .bow:after {
+            right: -10px;
+            transform: rotate(-25deg)
+        }
+
+        .gift.open .box-lid {
+            transform: translate(-20px, -90px) rotate(-35deg);
+        }
+
+        .gift-glow {
+            position: absolute;
+            width: 200px;
+            height: 160px;
+            border-radius: 50%;
+            background: #ed8bc4;
+            filter: blur(60px);
+            opacity: .25;
+            transition: .5s;
+        }
+
+        .gift-stage:hover .gift-glow {
+            opacity: .7
+        }
+
+        .gift-stage:hover .gift {
+            transform: scale(1.07) rotateY(12deg);
+        }
+
+        .hint {
+            color: #e9b6d1;
+            margin: 15px;
+            font-size: 13px;
+        }
+
+        /* Message Card */
+
+        .message-card {
+            width: min(850px, 95%);
+            background: rgba(255, 255, 255, .07);
+            border: 1px solid #f3b7d54d;
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 30px;
+            box-sizing: border-box;
+            overflow-wrap: break-word;
+            margin: 25px 0;
+            box-shadow: 0 15px 60px #0005;
+            text-align: left;
+            word-wrap: break-word;
+        }
+
+        .message-card p {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #f8e8f2;
+            white-space: pre-wrap;
+            line-height: 1.5;
+            word-spacing: 10px;
+            margin-bottom: 18px;
+        }
+
+        .card-title {
+            text-align: center;
+            color: #eac58b;
+            font-size: 10px;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+        }
+
+        /* Age */
+
+        .age {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            margin: 20px;
+            text-align: left;
+        }
+
+        .age strong {
+            font-family: 'Playfair Display', serif;
+            font-size: 55px;
+            color: #f3b0ce;
+        }
+
+        .age p {
+            font-size: 12px;
+            color: #e5d2e5
+        }
+
+        /* Cake */
+
+        .cake {
+            position: relative;
+            width: 200px;
+            height: 170px;
+            margin: 30px auto;
+        }
+
+        .cake-bottom {
+            position: absolute;
+            bottom: 5px;
+            left: 10px;
+            width: 180px;
+            height: 65px;
+            background: linear-gradient(90deg, #a24e83, #efacc8, #a24e83);
+            border-radius: 10px;
+            border-bottom: 8px solid #f9d8e4;
+        }
+
+        .cake-middle {
+            position: absolute;
+            bottom: 65px;
+            left: 25px;
+            width: 150px;
+            height: 45px;
+            background: linear-gradient(90deg, #f2c1d6, #fff0f6, #e49abc);
+            border-radius: 10px;
+        }
+
+        .cake-top {
+            position: absolute;
+            bottom: 105px;
+            left: 27px;
+            width: 146px;
+            height: 15px;
+            background: #ffe6ee;
+            border-radius: 50%;
+        }
+
+        .candles {
+            position: absolute;
+            bottom: 115px;
+            left: 60px;
+            display: flex;
+            gap: 25px;
+        }
+
+        .candles span {
+            width: 7px;
+            height: 30px;
+            background: linear-gradient(90deg, #e7bd75, #fff1b9);
+            border-radius: 4px;
+        }
+
+        .flames {
+            position: absolute;
+            bottom: 143px;
+            left: 59px;
+            display: flex;
+            gap: 25px;
+        }
+
+        .flames span {
+            width: 10px;
+            height: 16px;
+            background: orange;
+            border-radius: 50% 50% 50% 50%;
+            box-shadow: 0 0 15px orange;
+            animation: flicker .5s infinite alternate;
+        }
+
+        @keyframes flicker {
+            to {
+                transform: scale(.7);
+                opacity: .6
+            }
+        }
+
+        /* Effects */
+
+        .particle {
+            position: fixed;
+            top: -30px;
+            pointer-events: none;
+            z-index: 10;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(500deg);
+                opacity: 0
+            }
+        }
+
+        .heart {
+            position: fixed;
+            bottom: -30px;
+            color: #f4a1c4;
+            animation: heartRise 7s linear forwards;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes heartRise {
+            to {
+                transform: translateY(-110vh) rotate(40deg);
+                opacity: 0
+            }
+        }
+
+        .final-message {
+            display: none;
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            color: #f5c3da;
+            line-height: 1.7;
+            margin: 20px;
+        }
+
+        .final-message.show {
+            display: block
+        }
+
+        .replay {
+            margin-top: 20px;
+            background: none;
+            color: #d7b7d5;
+            border: 0;
+            cursor: pointer;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        @media(max-width:600px) {
+            .message-card {
+                padding: 22px
+            }
+
+            .message-card p {
+                font-size: 14px
+            }
+
+            h1 {
+                font-size: 43px
+            }
+
+            .gift-stage {
+                height: 230px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- WELCOME SCREEN -->
+
+    <section class="screen active" id="welcome">
+
+        <div class="kicker">✦ A SPECIAL DAY ✦</div>
+
+        <p style="font-family:'Playfair Display';font-size:25px;color:#e8d6e8">
+            Someone Special Deserves<br>Something Special...
+        </p>
+
+        <h1>Many Many Happy Returns Of The Day <br>
+            <span>Tushardeep Soni</span> ❤️
+        </h1>
+
+        <p class="subtitle">
+            Today is not just another day.<br>
+            It's the celebration of someone truly special.
+        </p>
+
+        <button class="btn" onclick="startSurprise()">
+            START YOUR SURPRISE ✨
+        </button>
+
+        <p style="margin-top:40px;color:#b9a4c2;font-size:10px;letter-spacing:3px">
+            16 NOVEMBER • MADE WITH LOVE
+        </p>
+
+    </section>
+
+
+    <!-- GIFT SCREEN -->
+
+    <section class="screen" id="gift-screen">
+
+        <div class="kicker">YOUR SURPRISE IS READY</div>
+
+        <h2>A Little Box.<br><em>A Lot Of Love.</em></h2>
+
+        <p class="subtitle">Something beautiful is waiting inside...</p>
+
+        <div class="gift-stage" onclick="unlockGift()">
+
+            <div class="gift-glow"></div>
+
+            <div class="gift" id="gift">
+
+                <div class="box-lid">
+                    <div class="ribbon"></div>
+                    <div class="bow"></div>
+                </div>
+
+                <div class="box-body">
+                    <div class="ribbon"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <p class="hint" id="hint">Tap the gift to open your surprise ❤️</p>
+
+        <button class="btn" id="unlock-btn" onclick="unlockGift()">
+            UNLOCK YOUR GIFT ✨
+        </button>
+
+    </section>
+
+
+    <!-- MESSAGE SCREEN -->
+
+    <section class="screen" id="message-screen">
+
+        <div class="kicker">A MESSAGE FROM THE HEART</div>
+
+        <h2>For Someone <em>Special.</em></h2>
+
+        <div class="message-card">
+
+            <div class="card-title">✦ A LITTLE NOTE FOR YOU ✦</div>
+
+            <p id="typed-message"></p>
+
+        </div>
+
+        <div class="age">
+
+            <strong>33</strong>
+
+            <p>
+                Years of Memories,<br>
+                Dreams & Beautiful Moments
+                <br><small>Born on 16 November 1993</small>
+            </p>
+
+        </div>
+
+        <button class="btn" onclick="showFinal()">
+            ONE MORE SURPRISE →
+        </button>
+
+    </section>
+
+
+    <!-- FINAL SCREEN -->
+
+    <section class="screen" id="final-screen">
+
+        <div class="kicker">THE MAGIC ISN'T OVER</div>
+
+        <h2>One More <em>Thing...</em></h2>
+
+        <p class="subtitle">
+            May your life always be as beautiful<br>
+            as your dreams. ❤️
+        </p>
+
+        <div class="cake">
+
+            <div class="flames">
+                <span></span><span></span><span></span>
+            </div>
+
+            <div class="candles">
+                <span></span><span></span><span></span>
+            </div>
+
+            <div class="cake-top"></div>
+            <div class="cake-middle"></div>
+            <div class="cake-bottom"></div>
+
+        </div>
+
+        <button class="btn" id="wish-btn" onclick="makeWish()">
+            MAKE A WISH ✨
+        </button>
+
+        <div class="final-message" id="final-message">
+            Many Many Happy Returns Of The day Once Again,<br>
+            <strong>Tushardeep Soni!</strong> ❤️
+            <br>
+            <small>Keep Shining. Keep Smiling. Stay Blessed Forever! ✨</small>
+        </div>
+
+        <button class="replay" onclick="replay()">
+            ↻ REPLAY THE SURPRISE
+        </button>
+
+    </section>
+
+
+    <script>
+
+        const message = `Dear Tushardeep Soni ❤️
+
+On this special day, I wish you endless happiness, beautiful memories, unlimited success and countless reasons to smile.
+
+May every dream you carry in your heart find its way into reality.
+
+May life surprise you with beautiful moments, genuine people and opportunities beyond your imagination.
+
+Never stop smiling, never stop believing in yourself, and always remember how special you are.
+
+You deserve all the love, happiness and magic this world has to offer.
+
+Happy Birthday, Tushardeep Soni! 🎂❤️
+
+Keep Shining. Keep Smiling. Stay Blessed Forever! ✨`;
+
+        let isOpened = false;
+        let typingTimer;
+
+        function showScreen(id) {
+            document.querySelectorAll(".screen").forEach(s => {
+                s.classList.remove("active");
+            });
+            document.getElementById(id).classList.add("active");
+            window.scrollTo(0, 0);
+        }
+
+        function startSurprise() {
+            showScreen("gift-screen");
+            heartShower();
+        }
+
+        function unlockGift() {
+
+            if (isOpened) return;
+            isOpened = true;
+
+            document.getElementById("gift").classList.add("open");
+
+            document.getElementById("hint").innerText =
+                "Your surprise is opening... ❤️";
+
+            document.getElementById("unlock-btn").disabled = true;
+
+            confetti();
+
+            setTimeout(() => {
+                showScreen("message-screen");
+                heartShower();
+                typeMessage();
+            }, 1400);
+
+        }
+
+        function typeMessage() {
+
+            clearInterval(typingTimer);
+
+            const box = document.getElementById("typed-message");
+            box.innerText = "";
+
+            let i = 0;
+
+            typingTimer = setInterval(() => {
+                box.innerText += message.charAt(i);
+                i++;
+
+                if (i >= message.length) {
+                    clearInterval(typingTimer);
+                }
+
+            }, 25);
+
+        }
+
+        function showFinal() {
+            showScreen("final-screen");
+            heartShower();
+        }
+
+        function makeWish() {
+
+            document.getElementById("final-message")
+                .classList.add("show");
+
+            document.getElementById("wish-btn")
+                .innerText = "WISH SENT WITH LOVE ❤️";
+
+            document.getElementById("wish-btn").disabled = true;
+
+            confetti();
+            heartShower();
+
+        }
+
+        function heartShower() {
+
+            const symbols = ["❤️", "💗", "💕", "♡", "♥", "✨"];
+
+            for (let i = 0; i < 35; i++) {
+
+                let heart = document.createElement("div");
+
+                heart.className = "heart";
+
+                heart.innerText =
+                    symbols[Math.floor(Math.random() * symbols.length)];
+
+                heart.style.left = Math.random() * 100 + "%";
+                heart.style.fontSize = (12 + Math.random() * 18) + "px";
+                heart.style.animationDuration = (4 + Math.random() * 5) + "s";
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => heart.remove(), 9000);
+
+            }
+
+        }
+
+        function confetti() {
+
+            const colors = ["#f4a6c8", "#eac58b", "#c7a1ec", "#fff"];
+
+            for (let i = 0; i < 100; i++) {
+
+                let piece = document.createElement("div");
+
+                piece.className = "particle";
+
+                piece.style.left = Math.random() * 100 + "%";
+                piece.style.background =
+                    colors[Math.floor(Math.random() * colors.length)];
+
+                piece.style.width = "7px";
+                piece.style.height = "12px";
+
+                piece.style.animationDuration =
+                    (2 + Math.random() * 3) + "s";
+
+                piece.style.borderRadius = "2px";
+
+                document.body.appendChild(piece);
+
+                setTimeout(() => piece.remove(), 5500);
+
+            }
+
+        }
+
+        function replay() {
+
+            isOpened = false;
+
+            clearInterval(typingTimer);
+
+            document.getElementById("gift").classList.remove("open");
+
+            document.getElementById("hint").innerText =
+                "Tap the gift to open your surprise ❤️";
+
+            document.getElementById("unlock-btn").disabled = false;
+
+            document.getElementById("unlock-btn").innerText =
+                "UNLOCK YOUR GIFT ✨";
+
+            document.getElementById("typed-message").innerText = "";
+
+            document.getElementById("final-message").classList.remove("show");
+
+            document.getElementById("wish-btn").disabled = false;
+
+            document.getElementById("wish-btn").innerText = "MAKE A WISH ✨";
+
+            showScreen("welcome");
+
+        }
+
+        // Gentle background hearts
+
+        setInterval(() => {
+            if (Math.random() > .45) heartShowerSmall();
+        }, 2500);
+
+        function heartShowerSmall() {
+
+            let h = document.createElement("div");
+            h.className = "heart";
+            h.innerText = "♥";
+            h.style.left = Math.random() * 100 + "%";
+            h.style.opacity = ".45";
+            h.style.fontSize = "12px";
+            h.style.animationDuration = "8s";
+
+            document.body.appendChild(h);
+
+            setTimeout(() => h.remove(), 8000);
+
+        }
+
+    </script>
+
+</body>
+
+</html>
